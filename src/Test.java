@@ -7,10 +7,54 @@ public class Test {
 	public static void main(String[] args) {
 //		int[] t = {16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7};
 //		int[][] tt = {{2,3}, {0,7}, {5,9}, {6,10}};
-		String[] str = {"0123456789","9876543210","9999999999999"};
-		solution(str, 50000, 5, 5);
+//		String[] str = {"0123456789","9876543210","9999999999999"};
+//		solution(str, 50000, 5, 5);
+//		solution2("banana", "ana");
 //		System.out.println(solution("cvsgiorszzzmrpaqpe", t));
 //		System.out.println(solution("rermgorpsam", tt));
+		solution2("Progra21Sremm3", 6, 12);
+	}
+
+	public static void solution2(String my_string, int s, int e){
+		StringBuffer sb = new StringBuffer(my_string.substring(s, e+1));
+		StringBuffer sb2 = new StringBuffer(my_string);
+		String str = sb.reverse().toString();
+		sb2.replace(s, e+1, str);
+		System.out.println(sb2.toString());
+	}
+	
+	public static void solution2(String my_string, String is_suffix){
+//		List<String> answer = new ArrayList<>();
+		int answer = 0;
+		String[] strings = new String[my_string.length()];
+		for (int i = 0; i < my_string.length(); i++) {
+			strings[i] = my_string.substring(i, my_string.length());
+			System.out.println(strings[i]);
+			if(strings[i].equals(is_suffix)){
+				answer = 1;
+				break;
+			} else {
+				answer = 0;
+			}
+		}
+		System.out.println(answer);
+//		return answer;
+	}
+
+	public String solution(String my_string, int n) {
+		String answer = "";
+		answer = my_string.substring(my_string.length()-n, my_string.length());
+		return answer;
+	}
+
+	public static String solution(String[] my_strings, int[][] parts){
+		String answer = "";
+		for (int i = 0; i < my_strings.length; i++) {
+			int s = parts[i][0];
+			int e = parts[i][1];
+			answer += my_strings[i].substring(s, e+1);
+		}
+		return answer;
 	}
 
 	public static int[] solution(String[] intStrs, int k, int s, int l){
