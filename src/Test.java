@@ -5,14 +5,53 @@ import java.util.List;
 
 public class Test {
 	public static void main(String[] args) {
-//		int[] t = {16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7};
-//		int[][] tt = {{2,3}, {0,7}, {5,9}, {6,10}};
-//		String[] str = {"0123456789","9876543210","9999999999999"};
-//		solution(str, 50000, 5, 5);
-//		solution2("banana", "ana");
-//		System.out.println(solution("cvsgiorszzzmrpaqpe", t));
-//		System.out.println(solution("rermgorpsam", tt));
-		solution2("Progra21Sremm3", 6, 12);
+//		solution2("Progra21Sremm3", 6, 12);
+		int[] a = {1, 5, 2};
+		int[] b = {1,2,3,4,5,6,7,8,9};
+		solution3(3, a, b);
+	}
+
+	public static int[] solution3(int n, int[] slicer, int[] num_list){
+		int a = n == 1 ? 0 : slicer[0];
+		int b = n == 2 ? num_list.length : slicer[1];
+		int c = n == 4 ? slicer[2] : 1;
+
+		int size = (b - a) / c;
+
+		int[] answer = new int[size + 1];
+
+		int idx = 0;
+		for(int i = a; i < b + 1; i += c){
+			answer[idx++] = num_list[i];
+		}
+//		if (n == 1) {
+//			for (int i = 0; i < b; i++){
+//				answer[idx++] = num_list[i];
+////				list.add(num_list[i]);
+//			}
+//		}else if(n == 2){
+//			for (int i = a; i < num_list.length; i++){
+//				answer[idx++] = num_list[i];
+////				list.add(num_list[i]);
+//			}
+//		}else if(n == 3){
+//			for (int i = a; i <= b; i++){
+//				answer[idx++] = num_list[i];
+////				list.add(num_list[i]);
+//			}
+//		}else{
+//			for (int i = a; i < num_list.length; i += c){
+//				if (i > b) break;
+//				answer[idx++] = num_list[i];
+////				list.add(num_list[i]);
+//			}
+//		}
+//		System.out.println(list);
+//		answer = list.stream().mapToInt(i->(int)i).toArray();
+		for (int i : answer) {
+			System.out.println(i);
+		}
+		return answer;
 	}
 
 	public static void solution2(String my_string, int s, int e){
