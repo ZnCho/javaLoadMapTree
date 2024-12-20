@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class MainV4 {
 
 	public static void main(String[] args) {
-		NetWorkServiceV4 netWorkService = new NetWorkServiceV4();
+//		NetWorkServiceV4 netWorkService = new NetWorkServiceV4();
+		NetWorkServiceV5 netWorkService = new NetWorkServiceV5();
 
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
